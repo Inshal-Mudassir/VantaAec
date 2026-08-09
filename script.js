@@ -1,14 +1,14 @@
-/* ===============================
-   VANTA AEC
-================================ */
+"use strict";
 
 
-/* MOBILE MENU */
+/* =================================
+   MOBILE NAVIGATION
+================================= */
 
 const menuButton = document.getElementById("menuButton");
 const nav = document.getElementById("nav");
 
-if (menuButton) {
+if (menuButton && nav) {
 
     menuButton.addEventListener("click", () => {
 
@@ -19,9 +19,13 @@ if (menuButton) {
 }
 
 
-/* CLOSE MOBILE MENU */
+/* =================================
+   CLOSE MOBILE MENU
+================================= */
 
-document.querySelectorAll(".nav-link").forEach(link => {
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach((link) => {
 
     link.addEventListener("click", () => {
 
@@ -32,60 +36,44 @@ document.querySelectorAll(".nav-link").forEach(link => {
 });
 
 
-/* HEADER SHADOW */
+/* =================================
+   ACTIVE NAVIGATION
+================================= */
 
-const header = document.getElementById("header");
+const sections = document.querySelectorAll("section[id]");
 
-window.addEventListener("scroll", () => {
+function updateActiveNavigation() {
 
-    if (window.scrollY > 30) {
+    let currentSection = "";
 
-        header.style.boxShadow =
-            "0 8px 30px rgba(16,32,43,.08)";
+    sections.forEach((section) => {
 
-    } else {
+        const sectionTop =
+            section.offsetTop - 150;
 
-        header.style.boxShadow = "none";
+        const sectionHeight =
+            section.offsetHeight;
 
-    }
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
 
-});
-
-
-/* ACTIVE NAVIGATION */
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-const navLinks =
-    document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const top =
-            section.offsetTop - 160;
-
-        if (window.scrollY >= top) {
-
-            current =
-                section.getAttribute("id");
+            currentSection = section.id;
 
         }
 
     });
 
-    navLinks.forEach(link => {
+
+    navLinks.forEach((link) => {
 
         link.classList.remove("active");
 
-        if (
-            link.getAttribute("href")
-            === "#" + current
-        ) {
+        const href =
+            link.getAttribute("href");
+
+        if (href === `#${currentSection}`) {
 
             link.classList.add("active");
 
@@ -93,10 +81,96 @@ window.addEventListener("scroll", () => {
 
     });
 
-});
+}
+
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+);
 
 
-/* CONTACT FORM */
+/* =================================
+   HEADER SHADOW
+================================= */
+
+const header =
+    document.querySelector(".header");
+
+function updateHeader() {
+
+    if (!header) return;
+
+    if (window.scrollY > 30) {
+
+        header.style.boxShadow =
+            "0 8px 30px rgba(20,30,35,.06)";
+
+    } else {
+
+        header.style.boxShadow = "none";
+
+    }
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateHeader,
+    { passive: true }
+);
+
+
+/* =================================
+   SMOOTH ANCHOR SCROLL
+================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const targetId =
+                link.getAttribute("href");
+
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
+
+            const target =
+                document.querySelector(targetId);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
+
+            const targetPosition =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+        });
+
+    });
+
+
+/* =================================
+   FORM
+================================= */
 
 const inquiryForm =
     document.getElementById("inquiryForm");
@@ -109,161 +183,159 @@ if (inquiryForm) {
 
     inquiryForm.addEventListener(
         "submit",
-        function(event) {
+        function () {
 
-            event.preventDefault();
-
-
-            const name =
-                document.getElementById("name")
-                .value.trim();
-
-            const email =
-                document.getElementById("email")
-                .value.trim();
-
-            const phone =
-                document.getElementById("phone")
-                .value.trim();
-
-            const service =
-                document.getElementById("service")
-                .value.trim();
-
-            const message =
-                document.getElementById("message")
-                .value.trim();
-
-
-            if (!name || !email || !message) {
+            if (formMessage) {
 
                 formMessage.textContent =
-                    "Please complete the required fields.";
+                    "Sending your inquiry...";
 
                 formMessage.style.color =
-                    "#b44d4d";
-
-                return;
+                    "#b4874a";
 
             }
 
-
-            /*
-                CHANGE THIS TO YOUR REAL
-                COMPANY EMAIL.
-            */
-
-            const companyEmail =
-                "company@email.com";
-
-
-            const subject =
-                encodeURIComponent(
-                    "New VANTA AEC Project Inquiry"
-                );
-
-
-            const body =
-                encodeURIComponent(
-`
-NEW PROJECT INQUIRY
-
-Name:
-${name}
-
-Email:
-${email}
-
-Phone:
-${phone || "Not provided"}
-
-Service:
-${service || "Not selected"}
-
-Project Details:
-${message}
-`
-                );
-
-
-            window.location.href =
-                `mailto:${companyEmail}?subject=${subject}&body=${body}`;
-
-
-            formMessage.textContent =
-                "Opening your email application...";
-
-            formMessage.style.color =
-                "#4f8c60";
-
-
-            inquiryForm.reset();
-
         }
     );
 
 }
 
 
-/* FOOTER YEAR */
+/* =================================
+   ESTIMATION VALUE ANIMATION
+================================= */
 
-const year =
-    document.getElementById("year");
+const stats =
+    document.querySelectorAll(".stat strong");
 
-if (year) {
+let statsAnimated = false;
 
-    year.textContent =
-        new Date().getFullYear();
+function animateStats() {
 
-}
+    if (statsAnimated) return;
 
+    const statsSection =
+        document.querySelector(".stats");
 
-/* SCROLL REVEAL */
+    if (!statsSection) return;
 
-const revealItems =
-    document.querySelectorAll(
-        ".service-card, .sample-card, .stat, .person-card, .ceo-card"
-    );
+    const rect =
+        statsSection.getBoundingClientRect();
 
+    if (rect.top < window.innerHeight - 100) {
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+        statsAnimated = true;
 
-            entries.forEach(entry => {
+        stats.forEach((stat) => {
 
-                if (entry.isIntersecting) {
+            const finalValue =
+                stat.textContent.trim();
 
-                    entry.target.style.opacity = "1";
+            const number =
+                parseInt(
+                    finalValue.replace(/\D/g, ""),
+                    10
+                );
 
-                    entry.target.style.transform =
-                        "translateY(0)";
+            if (!number) return;
 
-                    observer.unobserve(
-                        entry.target
+            const suffix =
+                finalValue.replace(
+                    /[0-9]/g,
+                    ""
+                );
+
+            let current = 0;
+
+            const duration = 1200;
+
+            const start =
+                performance.now();
+
+            function update(time) {
+
+                const progress =
+                    Math.min(
+                        (time - start) /
+                        duration,
+                        1
                     );
+
+                current =
+                    Math.floor(
+                        number * progress
+                    );
+
+                stat.textContent =
+                    current + suffix;
+
+                if (progress < 1) {
+
+                    requestAnimationFrame(update);
+
+                } else {
+
+                    stat.textContent =
+                        finalValue;
 
                 }
 
-            });
+            }
 
-        },
-        {
-            threshold: .08
-        }
-    );
+            requestAnimationFrame(update);
+
+        });
+
+    }
+
+}
+
+window.addEventListener(
+    "scroll",
+    animateStats,
+    { passive: true }
+);
+
+animateStats();
 
 
-revealItems.forEach(item => {
+/* =================================
+   IMAGE ERROR FALLBACK
+================================= */
 
-    item.style.opacity = "0";
+const backgroundImages = [
+    ".hero-image",
+    ".feature-image",
+    ".project-one",
+    ".project-two",
+    ".project-three"
+];
 
-    item.style.transform =
-        "translateY(20px)";
+backgroundImages.forEach((selector) => {
 
-    item.style.transition =
-        "opacity .6s ease, transform .6s ease";
+    const element =
+        document.querySelector(selector);
 
-    observer.observe(item);
+    if (!element) return;
+
+    const background =
+        getComputedStyle(element)
+            .backgroundImage;
+
+    if (
+        !background ||
+        background === "none"
+    ) {
+        element.style.backgroundColor =
+            "#dcd8cf";
+    }
 
 });
+
+
+/* =================================
+   INITIALIZE
+================================= */
+
+updateActiveNavigation();
+updateHeader();
