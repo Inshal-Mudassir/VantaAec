@@ -1,122 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>VANTA AEC | Construction Estimating & Engineering</title>
 
-    <meta name="description"
-          content="VANTA AEC - Architecture, Structural Engineering, MEP, 3D Visualization, Estimation and Project Management in Houston, Texas.">
+    <meta
+        name="description"
+        content="VANTA AEC provides professional construction estimating, bidding, engineering and AEC project services."
+    >
 
-    <title>VANTA AEC | Houston, Texas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    <!-- GOOGLE FONTS -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-    <!-- FONT AWESOME -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     PAGE LOADER
-===================================================== -->
-
-<div class="loader" id="loader">
-
-    <div class="loader-inner">
-
-        <div class="loader-logo">
-            VANTA<span>.</span>
-        </div>
-
-        <div class="loader-line">
-            <span></span>
-        </div>
-
-        <p>
-            ARCHITECTURE · ENGINEERING · CONSTRUCTION
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header class="header" id="header">
 
-    <div class="container nav">
+    <div class="container nav-container">
 
         <a href="#home" class="logo">
 
-            <span class="logo-mark">
-                V
-            </span>
+            <span class="logo-mark">V</span>
 
             <span class="logo-text">
-                VANTA <b>AEC</b>
+                <strong>VANTA</strong>
+                <small>AEC</small>
             </span>
 
         </a>
 
+        <nav class="nav" id="nav">
 
-        <nav class="nav-links" id="navLinks">
-
-            <a href="#home">Home</a>
-
-            <a href="#services">Services</a>
-
-            <a href="#projects">Projects</a>
-
-            <a href="#samples">Samples</a>
-
-            <a href="#about">About</a>
-
-            <a href="#contact">Contact</a>
-
-            <a href="#contact" class="nav-cta">
-                Start a Project
-            </a>
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#samples" class="nav-link">Samples</a>
+            <a href="#team" class="nav-link">Team</a>
+            <a href="#contact" class="nav-link">Contact</a>
 
         </nav>
 
+        <a href="#contact" class="nav-button">
+            Get a Quote
+        </a>
 
-        <button class="menu-btn"
-                id="menuBtn"
-                aria-label="Menu">
-
-            <i class="fa-solid fa-bars"></i>
-
+        <button class="menu-button" id="menuButton">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
     </div>
@@ -124,88 +67,125 @@
 </header>
 
 
+<!-- ================= HERO ================= -->
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<main>
 
 <section class="hero" id="home">
 
-
-    <!-- REMOTE CONSTRUCTION IMAGE -->
-
-    <div class="hero-image">
-
-        <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2200&q=85"
-            alt="Construction project"
-        >
-
-    </div>
-
+    <div class="hero-image"></div>
 
     <div class="hero-overlay"></div>
 
+    <div class="hero-grid"></div>
 
-    <div class="container hero-content">
+    <div class="container hero-container">
 
-        <div class="hero-copy reveal">
+        <div class="hero-content">
 
-            <div class="eyebrow light">
-
+            <div class="eyebrow">
                 <span></span>
-
-                Architecture · Engineering · Construction
-
+                AEC • ESTIMATING • CONSTRUCTION
             </div>
 
-
             <h1>
-
-                We design the
-                <span>future.</span>
-
+                Precise estimates.
+                <span>Stronger bids.</span>
             </h1>
 
-
-            <p>
-
-                VANTA AEC provides architecture, structural
-                engineering, MEP design, 3D visualization,
-                estimating, permitting and project management
-                solutions for projects across Houston, Texas
-                and beyond.
-
+            <p class="hero-description">
+                Professional construction estimating, quantity takeoffs,
+                bidding and AEC project support for contractors,
+                developers and construction professionals.
             </p>
-
 
             <div class="hero-buttons">
 
-                <a href="#contact"
-                   class="btn btn-primary">
-
-                    Start a Project
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
+                <a href="#contact" class="button button-primary">
+                    Request an Estimate
+                    <span>↗</span>
                 </a>
 
-
-                <a href="#projects"
-                   class="btn btn-outline">
-
-                    Explore Our Work
-
+                <a href="#services" class="button button-outline">
+                    Explore Services
                 </a>
 
             </div>
 
+            <div class="hero-stats">
 
-            <div class="hero-location">
+                <div>
+                    <strong>1,534+</strong>
+                    <span>Projects Completed</span>
+                </div>
 
-                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <strong>98%</strong>
+                    <span>Bidding Success</span>
+                </div>
 
-                Houston, Texas · USA
+                <div>
+                    <strong>15+</strong>
+                    <span>AEC Services</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ESTIMATION PANEL -->
+
+        <div class="estimation-panel">
+
+            <div class="panel-header">
+
+                <span>PROJECT ESTIMATE</span>
+
+                <span class="live">
+                    <i></i>
+                    ACTIVE
+                </span>
+
+            </div>
+
+            <div class="panel-body">
+
+                <small>ESTIMATED PROJECT VALUE</small>
+
+                <h2>$2.48M</h2>
+
+                <div class="estimate-progress">
+                    <span></span>
+                </div>
+
+                <div class="estimate-item">
+                    <span>Materials</span>
+                    <strong>$1.42M</strong>
+                </div>
+
+                <div class="estimate-item">
+                    <span>Labor</span>
+                    <strong>$624K</strong>
+                </div>
+
+                <div class="estimate-item">
+                    <span>Equipment</span>
+                    <strong>$218K</strong>
+                </div>
+
+                <div class="estimate-item">
+                    <span>Other</span>
+                    <strong>$216K</strong>
+                </div>
+
+            </div>
+
+            <div class="panel-footer">
+
+                <span>Bid Confidence</span>
+
+                <strong>98%</strong>
 
             </div>
 
@@ -213,79 +193,71 @@
 
     </div>
 
+</section>
 
-    <div class="hero-bottom">
 
-        <span>
-            SCROLL TO EXPLORE
-        </span>
+<!-- ================= INTRO ================= -->
 
-        <i class="fa-solid fa-arrow-down"></i>
+<section class="intro section">
+
+    <div class="container intro-grid">
+
+        <div>
+
+            <div class="section-label">
+                VANTA AEC
+            </div>
+
+            <h2>
+                Construction decisions
+                <span>built on precision.</span>
+            </h2>
+
+        </div>
+
+        <div>
+
+            <p>
+                From quantity takeoffs and cost estimation to bidding
+                and project support, VANTA AEC provides the information
+                needed to plan projects with greater confidence.
+            </p>
+
+            <a href="#contact" class="text-link">
+                Discuss your project →
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     STATS
-===================================================== -->
+<!-- ================= STATS ================= -->
 
 <section class="stats">
 
     <div class="container stats-grid">
 
-
-        <div class="stat reveal">
-
-            <strong>
-                150<span>+</span>
-            </strong>
-
-            <p>
-                Projects Delivered
-            </p>
-
+        <div class="stat">
+            <strong>1,534+</strong>
+            <span>Projects Completed</span>
         </div>
 
-
-        <div class="stat reveal">
-
-            <strong>
-                8<span>+</span>
-            </strong>
-
-            <p>
-                Years Experience
-            </p>
-
+        <div class="stat highlight">
+            <strong>98%</strong>
+            <span>Bidding Success Rate</span>
         </div>
 
-
-        <div class="stat reveal">
-
-            <strong>
-                20<span>+</span>
-            </strong>
-
-            <p>
-                Design Disciplines
-            </p>
-
+        <div class="stat">
+            <strong>15+</strong>
+            <span>Professional Services</span>
         </div>
 
-
-        <div class="stat reveal">
-
-            <strong>
-                98<span>%</span>
-            </strong>
-
-            <p>
-                Client Satisfaction
-            </p>
-
+        <div class="stat">
+            <strong>100%</strong>
+            <span>Detail Focused</span>
         </div>
 
     </div>
@@ -293,499 +265,147 @@
 </section>
 
 
+<!-- ================= SERVICES ================= -->
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section class="section services"
-         id="services">
+<section class="services section" id="services">
 
     <div class="container">
 
-
-        <div class="section-heading reveal">
+        <div class="section-heading">
 
             <div>
 
-                <div class="eyebrow">
-
-                    <span></span>
-
-                    What We Do
-
+                <div class="section-label">
+                    WHAT WE DO
                 </div>
 
-
                 <h2>
-
-                    Complete AEC
-                    <span>solutions.</span>
-
+                    Complete
+                    <span>AEC services.</span>
                 </h2>
 
             </div>
 
-
             <p>
-
-                From concept development to construction-ready
-                documentation, we bring multiple disciplines
-                together under one roof.
-
+                Professional estimating, construction and development
+                services for a wide range of project types.
             </p>
 
         </div>
-
 
 
         <div class="services-grid">
 
-
-            <!-- SERVICE 01 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>01</span>
-
-                    <i class="fa-solid fa-building"></i>
-
-                </div>
-
-                <h3>
-                    Architectural Design
-                </h3>
-
-                <p>
-
-                    Concept development, floor plans, elevations,
-                    sections, details and complete construction
-                    documentation.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 02 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>02</span>
-
-                    <i class="fa-solid fa-compass-drafting"></i>
-
-                </div>
-
-                <h3>
-                    Structural Engineering
-                </h3>
-
-                <p>
-
-                    Structural systems, foundations, framing,
-                    calculations, details and engineering
-                    documentation.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 03 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>03</span>
-
-                    <i class="fa-solid fa-gears"></i>
-
-                </div>
-
-                <h3>
-                    MEP Engineering
-                </h3>
-
-                <p>
-
-                    Mechanical, electrical and plumbing systems
-                    coordinated with architectural and structural
-                    drawings.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 04 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>04</span>
-
-                    <i class="fa-solid fa-cube"></i>
-
-                </div>
-
-                <h3>
-                    3D Visualization
-                </h3>
-
-                <p>
-
-                    High-quality exterior and interior renders,
-                    walkthroughs and presentation visualizations.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 05 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>05</span>
-
-                    <i class="fa-solid fa-calculator"></i>
-
-                </div>
-
-                <h3>
-                    Cost Estimation
-                </h3>
-
-                <p>
-
-                    Quantity takeoffs, construction estimates,
-                    bid preparation and cost analysis.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 06 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>06</span>
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </div>
-
-                <h3>
-                    Project Management
-                </h3>
-
-                <p>
-
-                    Planning, scheduling, coordination,
-                    documentation and project delivery support.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 07 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>07</span>
-
-                    <i class="fa-solid fa-file-circle-check"></i>
-
-                </div>
-
-                <h3>
-                    Permit Sets
-                </h3>
-
-                <p>
-
-                    Professional permit documentation prepared
-                    for review and submission.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 08 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>08</span>
-
-                    <i class="fa-solid fa-file-signature"></i>
-
-                </div>
-
-                <h3>
-                    Bidding Documents
-                </h3>
-
-                <p>
-
-                    Bid packages, drawing sets, scopes,
-                    quantities and contractor documentation.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <!-- SERVICE 09 -->
-
-            <article class="service-card reveal">
-
-                <div class="service-header">
-
-                    <span>09</span>
-
-                    <i class="fa-solid fa-pen-ruler"></i>
-
-                </div>
-
-                <h3>
-                    Drafting & CAD
-                </h3>
-
-                <p>
-
-                    Professional CAD drafting, redlines,
-                    as-built drawings and construction documents.
-
-                </p>
-
-                <a href="#contact">
-
-                    Learn More
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="section about"
-         id="about">
-
-    <div class="container about-grid">
-
-
-        <div class="about-image reveal">
-
-            <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85"
-                alt="Construction professionals"
-            >
-
-
-            <div class="experience-card">
-
-                <strong>
-                    08+
-                </strong>
-
-                <span>
-                    Years of AEC experience
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="about-content reveal">
-
-            <div class="eyebrow">
-
-                <span></span>
-
-                About VANTA AEC
-
-            </div>
-
-
-            <h2>
-
-                Precision in every
-                <span>line we draw.</span>
-
-            </h2>
-
-
-            <p>
-
-                VANTA AEC is a multidisciplinary architecture,
-                engineering and construction documentation
-                company based in Houston, Texas.
-
-            </p>
-
-
-            <p>
-
-                We collaborate with architects, contractors,
-                developers, property owners and construction
-                professionals to turn ideas into coordinated,
-                clear and construction-ready documents.
-
-            </p>
-
-
-            <div class="check-list">
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Multidisciplinary coordination
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Construction-ready documentation
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Detail-focused delivery
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Clear project communication
-
-                </div>
-
-            </div>
-
-
-            <a href="#contact"
-               class="text-link">
-
-                Work With Us
-
-                <i class="fa-solid fa-arrow-right"></i>
-
+            <a href="https://theaceservices.com/residential-construction/" target="_blank" class="service-card">
+                <span>01</span>
+                <h3>Residential Construction</h3>
+                <p>Construction support for residential projects.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/commercial-construction/" target="_blank" class="service-card">
+                <span>02</span>
+                <h3>Commercial Construction</h3>
+                <p>Estimating and support for commercial developments.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/industrial-construction/" target="_blank" class="service-card">
+                <span>03</span>
+                <h3>Industrial Construction</h3>
+                <p>Project estimating for industrial construction.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/residential-buildings/" target="_blank" class="service-card">
+                <span>04</span>
+                <h3>Residential Buildings</h3>
+                <p>Detailed planning and cost estimation.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/educational-buildings/" target="_blank" class="service-card">
+                <span>05</span>
+                <h3>Educational Buildings</h3>
+                <p>Estimating support for education facilities.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/assembly-buildings/" target="_blank" class="service-card">
+                <span>06</span>
+                <h3>Assembly Buildings</h3>
+                <p>Professional estimating for assembly facilities.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/healthcare-buildings/" target="_blank" class="service-card">
+                <span>07</span>
+                <h3>Healthcare Buildings</h3>
+                <p>Project support for healthcare facilities.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/residential-estimating/" target="_blank" class="service-card">
+                <span>08</span>
+                <h3>Public Buildings</h3>
+                <p>Estimating for public facilities and infrastructure.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/hotels-development/" target="_blank" class="service-card">
+                <span>09</span>
+                <h3>Hotels Development</h3>
+                <p>Development and estimating for hospitality projects.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/office-development/" target="_blank" class="service-card">
+                <span>10</span>
+                <h3>Office Development</h3>
+                <p>Planning and estimating for office projects.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/residential-estimating/" target="_blank" class="service-card">
+                <span>11</span>
+                <h3>Shopping Centre</h3>
+                <p>Retail development estimating and support.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/warehouses-development/" target="_blank" class="service-card">
+                <span>12</span>
+                <h3>Warehouses Development</h3>
+                <p>Estimating for warehouses and logistics facilities.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/bridges-construction/" target="_blank" class="service-card">
+                <span>13</span>
+                <h3>Bridges Construction</h3>
+                <p>Project estimating for bridge construction.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/community-parks/" target="_blank" class="service-card">
+                <span>14</span>
+                <h3>Community Parks</h3>
+                <p>Planning and estimating for community spaces.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/residential-estimating/" target="_blank" class="service-card">
+                <span>15</span>
+                <h3>Residential Estimating</h3>
+                <p>Detailed residential takeoffs and estimates.</p>
+                <b>↗</b>
+            </a>
+
+            <a href="https://theaceservices.com/construction-estimation/" target="_blank" class="service-card">
+                <span>16</span>
+                <h3>Commercial Estimating</h3>
+                <p>Competitive estimates for commercial bidding.</p>
+                <b>↗</b>
             </a>
 
         </div>
@@ -795,210 +415,85 @@
 </section>
 
 
+<!-- ================= FEATURE IMAGE ================= -->
 
-<!-- =====================================================
-     VISUAL BANNER
-===================================================== -->
+<section class="feature-project">
 
-<section class="visual-banner">
+    <div class="feature-image"></div>
 
-    <div class="visual-image">
+    <div class="feature-overlay"></div>
 
-        <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=85"
-            alt="Construction site"
-        >
+    <div class="container feature-content">
 
-    </div>
+        <div>
 
+            <span>PRECISION • EXPERIENCE • RESULTS</span>
 
-    <div class="visual-overlay"></div>
+            <h2>
+                From drawings
+                <br>
+                to real-world
+                <strong>construction.</strong>
+            </h2>
 
+        </div>
 
-    <div class="visual-content reveal">
-
-        <span>
-            BUILT WITH PURPOSE
-        </span>
-
-        <h2>
-
-            From vision
-            <br>
-            <strong>to reality.</strong>
-
-        </h2>
+        <a href="#contact" class="button button-light">
+            Start Your Project →
+        </a>
 
     </div>
 
 </section>
 
 
+<!-- ================= BIDDING ================= -->
 
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
+<section class="bidding section">
 
-<section class="section projects"
-         id="projects">
+    <div class="container bidding-grid">
 
-    <div class="container">
+        <div>
 
-
-        <div class="section-heading reveal">
-
-            <div>
-
-                <div class="eyebrow">
-
-                    <span></span>
-
-                    Selected Work
-
-                </div>
-
-
-                <h2>
-
-                    Projects that
-                    <span>make an impact.</span>
-
-                </h2>
-
+            <div class="section-label">
+                BIDDING & ESTIMATION
             </div>
 
+            <h2>
+                Build a bid
+                <span>with confidence.</span>
+            </h2>
 
             <p>
-
-                A selection of conceptual, residential,
-                commercial and construction-focused work.
-
+                Accurate quantities, organized cost breakdowns and
+                detailed estimates help contractors submit competitive
+                and informed bids.
             </p>
+
+            <a href="#contact" class="button button-primary">
+                Request Estimate →
+            </a>
 
         </div>
 
 
+        <div class="rate-box">
 
-        <div class="projects-grid">
+            <div class="rate-ring">
 
-
-            <!-- PROJECT 01 -->
-
-            <article class="project-card project-wide reveal">
-
-                <img
-                    src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85"
-                    alt="Modern architecture"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        COMMERCIAL
-                    </span>
-
-                    <h3>
-                        Urban Office Development
-                    </h3>
-
-                    <p>
-                        Houston, Texas
-                    </p>
-
+                <div>
+                    <strong>98%</strong>
+                    <span>SUCCESS</span>
                 </div>
 
-            </article>
+            </div>
 
+            <h3>Bidding Success Rate</h3>
 
-
-            <!-- PROJECT 02 -->
-
-            <article class="project-card reveal">
-
-                <img
-                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85"
-                    alt="Modern office interior"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        INTERIOR
-                    </span>
-
-                    <h3>
-                        Modern Workspace
-                    </h3>
-
-                    <p>
-                        Texas
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- PROJECT 03 -->
-
-            <article class="project-card reveal">
-
-                <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
-                    alt="Luxury modern home"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        RESIDENTIAL
-                    </span>
-
-                    <h3>
-                        Contemporary Residence
-                    </h3>
-
-                    <p>
-                        Houston Area
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- PROJECT 04 -->
-
-            <article class="project-card project-wide reveal">
-
-                <img
-                    src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1800&q=85"
-                    alt="Modern residential development"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        DEVELOPMENT
-                    </span>
-
-                    <h3>
-                        Contemporary Development
-                    </h3>
-
-                    <p>
-                        Houston, Texas
-                    </p>
-
-                </div>
-
-            </article>
+            <p>
+                Detailed estimating designed to support stronger
+                project bids.
+            </p>
 
         </div>
 
@@ -1007,342 +502,134 @@
 </section>
 
 
+<!-- ================= SAMPLES ================= -->
 
-<!-- =====================================================
-     PDF SAMPLES
-===================================================== -->
-
-<section class="section samples"
-         id="samples">
+<section class="samples section" id="samples">
 
     <div class="container">
 
-
-        <div class="section-heading reveal">
+        <div class="section-heading">
 
             <div>
 
-                <div class="eyebrow">
-
-                    <span></span>
-
-                    Project Resources
-
+                <div class="section-label">
+                    PROJECT SAMPLES
                 </div>
 
-
                 <h2>
-
-                    Drawing &
-                    <span>document samples.</span>
-
+                    Our work in
+                    <span>detail.</span>
                 </h2>
 
             </div>
 
-
             <p>
-
-                Add your actual PDF documents below to showcase
-                your professional project deliverables.
-
+                Selected estimating and project documentation.
             </p>
 
         </div>
-
-
-
-        <!-- FILTER -->
-
-        <div class="sample-filters reveal">
-
-            <button class="filter-btn active"
-                    data-filter="all">
-
-                All
-
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="bidding">
-
-                Bidding
-
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="architecture">
-
-                Architecture
-
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="structural">
-
-                Structural
-
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="mep">
-
-                MEP
-
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="estimation">
-
-                Estimation
-
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="management">
-
-                Management
-
-            </button>
-
-        </div>
-
 
 
         <div class="samples-grid">
 
+            <div class="sample-card">
 
-            <article class="sample-card reveal"
-                     data-category="bidding">
+                <div class="pdf-icon">PDF</div>
 
-                <div class="pdf-header">
+                <div>
 
-                    <div class="pdf-icon">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
+                    <small>RESIDENTIAL</small>
 
-                    <span>
-                        BIDDING
-                    </span>
+                    <h3>
+                        Residential Cost Estimate
+                    </h3>
 
-                </div>
+                    <p>
+                        Construction estimate and quantity takeoff.
+                    </p>
 
-
-                <h3>
-                    Construction Bid Package
-                </h3>
-
-                <p>
-                    Contractor bidding documents and project
-                    information.
-                </p>
-
-
-                <a href="samples/bidding-package.pdf"
-                   target="_blank">
-
-                    View PDF
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <article class="sample-card reveal"
-                     data-category="architecture">
-
-                <div class="pdf-header">
-
-                    <div class="pdf-icon">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
-
-                    <span>
-                        ARCHITECTURE
-                    </span>
+                    <a href="samples/residential-estimate.pdf" target="_blank">
+                        View Document →
+                    </a>
 
                 </div>
 
-
-                <h3>
-                    Architectural Drawing Set
-                </h3>
-
-                <p>
-                    Plans, elevations, sections and construction
-                    details.
-                </p>
+            </div>
 
 
-                <a href="samples/architectural-set.pdf"
-                   target="_blank">
+            <div class="sample-card">
 
-                    View PDF
+                <div class="pdf-icon">PDF</div>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+                <div>
 
-                </a>
+                    <small>COMMERCIAL</small>
 
-            </article>
+                    <h3>
+                        Commercial Estimate
+                    </h3>
 
+                    <p>
+                        Commercial project cost breakdown.
+                    </p>
 
-
-            <article class="sample-card reveal"
-                     data-category="structural">
-
-                <div class="pdf-header">
-
-                    <div class="pdf-icon">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
-
-                    <span>
-                        STRUCTURAL
-                    </span>
+                    <a href="samples/commercial-estimate.pdf" target="_blank">
+                        View Document →
+                    </a>
 
                 </div>
 
-
-                <h3>
-                    Structural Drawing Set
-                </h3>
-
-                <p>
-                    Foundations, framing plans and structural
-                    details.
-                </p>
+            </div>
 
 
-                <a href="samples/structural-set.pdf"
-                   target="_blank">
+            <div class="sample-card">
 
-                    View PDF
+                <div class="pdf-icon">PDF</div>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+                <div>
 
-                </a>
+                    <small>BIDDING</small>
 
-            </article>
+                    <h3>
+                        Bid Proposal
+                    </h3>
 
+                    <p>
+                        Professional project bidding documentation.
+                    </p>
 
-
-            <article class="sample-card reveal"
-                     data-category="mep">
-
-                <div class="pdf-header">
-
-                    <div class="pdf-icon">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
-
-                    <span>
-                        MEP
-                    </span>
+                    <a href="samples/bid-proposal.pdf" target="_blank">
+                        View Document →
+                    </a>
 
                 </div>
 
-
-                <h3>
-                    MEP Documentation
-                </h3>
-
-                <p>
-                    Mechanical, electrical and plumbing
-                    documentation.
-                </p>
+            </div>
 
 
-                <a href="samples/mep-set.pdf"
-                   target="_blank">
+            <div class="sample-card">
 
-                    View PDF
+                <div class="pdf-icon">PDF</div>
 
-                    <i class="fa-solid fa-arrow-right"></i>
+                <div>
 
-                </a>
+                    <small>TAKEOFF</small>
 
-            </article>
+                    <h3>
+                        Quantity Takeoff
+                    </h3>
 
+                    <p>
+                        Detailed quantity takeoff documentation.
+                    </p>
 
-
-            <article class="sample-card reveal"
-                     data-category="estimation">
-
-                <div class="pdf-header">
-
-                    <div class="pdf-icon">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
-
-                    <span>
-                        ESTIMATION
-                    </span>
+                    <a href="samples/quantity-takeoff.pdf" target="_blank">
+                        View Document →
+                    </a>
 
                 </div>
 
-
-                <h3>
-                    Construction Cost Estimate
-                </h3>
-
-                <p>
-                    Quantity takeoffs and detailed project
-                    cost analysis.
-                </p>
-
-
-                <a href="samples/cost-estimate.pdf"
-                   target="_blank">
-
-                    View PDF
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
-
-
-
-            <article class="sample-card reveal"
-                     data-category="management">
-
-                <div class="pdf-header">
-
-                    <div class="pdf-icon">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
-
-                    <span>
-                        MANAGEMENT
-                    </span>
-
-                </div>
-
-
-                <h3>
-                    Project Management Report
-                </h3>
-
-                <p>
-                    Schedules, coordination and project progress
-                    documentation.
-                </p>
-
-
-                <a href="samples/project-management.pdf"
-                   target="_blank">
-
-                    View PDF
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </article>
+            </div>
 
         </div>
 
@@ -1351,126 +638,80 @@
 </section>
 
 
+<!-- ================= PROJECTS ================= -->
 
-<!-- =====================================================
-     PROCESS
-===================================================== -->
-
-<section class="section process">
+<section class="projects section" id="projects">
 
     <div class="container">
 
-
-        <div class="section-heading reveal">
+        <div class="section-heading">
 
             <div>
 
-                <div class="eyebrow">
-
-                    <span></span>
-
-                    Our Process
-
+                <div class="section-label">
+                    PROJECT EXPERIENCE
                 </div>
 
-
                 <h2>
-
-                    Simple process.
-                    <span>Strong results.</span>
-
+                    Built for the
+                    <span>real world.</span>
                 </h2>
 
             </div>
 
+            <p>
+                AEC experience across residential, commercial
+                and industrial environments.
+            </p>
+
         </div>
 
 
+        <div class="project-grid">
 
-        <div class="process-grid">
+            <article class="project project-one">
 
+                <div class="project-info">
 
-            <div class="process-card reveal">
+                    <small>COMMERCIAL</small>
 
-                <span>
-                    01
-                </span>
+                    <h3>
+                        Commercial Construction
+                    </h3>
 
-                <h3>
-                    Discover
-                </h3>
+                </div>
 
-                <p>
-
-                    Understand the project goals, scope,
-                    requirements and constraints.
-
-                </p>
-
-            </div>
+            </article>
 
 
+            <article class="project project-two">
 
-            <div class="process-card reveal">
+                <div class="project-info">
 
-                <span>
-                    02
-                </span>
+                    <small>RESIDENTIAL</small>
 
-                <h3>
-                    Design
-                </h3>
+                    <h3>
+                        Residential Development
+                    </h3>
 
-                <p>
+                </div>
 
-                    Develop coordinated architectural,
-                    structural and MEP solutions.
-
-                </p>
-
-            </div>
+            </article>
 
 
+            <article class="project project-three">
 
-            <div class="process-card reveal">
+                <div class="project-info">
 
-                <span>
-                    03
-                </span>
+                    <small>INDUSTRIAL</small>
 
-                <h3>
-                    Document
-                </h3>
+                    <h3>
+                        Industrial Construction
+                    </h3>
 
-                <p>
+                </div>
 
-                    Prepare drawings, estimates, specifications
-                    and supporting documentation.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="process-card reveal">
-
-                <span>
-                    04
-                </span>
-
-                <h3>
-                    Deliver
-                </h3>
-
-                <p>
-
-                    Deliver organized, professional and
-                    construction-ready project files.
-
-                </p>
-
-            </div>
+            </article>
 
         </div>
 
@@ -1479,54 +720,128 @@
 </section>
 
 
+<!-- ================= TEAM ================= -->
 
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta-section">
+<section class="team section" id="team">
 
     <div class="container">
 
-        <div class="cta-box reveal">
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-label">
+                    MEET THE PEOPLE
+                </div>
+
+                <h2>
+                    The people behind
+                    <span>VANTA AEC.</span>
+                </h2>
+
+            </div>
+
+            <p>
+                Experienced professionals working together
+                to deliver dependable project support.
+            </p>
+
+        </div>
 
 
-            <div class="cta-content">
+        <div class="team-grid">
 
-                <div class="eyebrow light">
 
-                    <span></span>
+            <!-- CEO -->
 
-                    Have a Project?
+            <div class="ceo-card">
+
+                <div class="ceo-image"></div>
+
+                <div class="ceo-info">
+
+                    <small>CHIEF EXECUTIVE OFFICER</small>
+
+                    <h3>CEO Name</h3>
+
+                    <p>
+                        Leads VANTA AEC with a focus on construction
+                        estimating, client relationships, business
+                        development and project delivery.
+                    </p>
+
+                    <div class="ceo-contact">
+
+                        <a href="mailto:company@email.com">
+                            company@email.com
+                        </a>
+
+                        <a href="tel:+00000000000">
+                            +00 000 0000000
+                        </a>
+
+                    </div>
 
                 </div>
 
+            </div>
 
-                <h2>
 
-                    Let's build
-                    <span>something better.</span>
+            <!-- OTHER PEOPLE -->
 
-                </h2>
+            <div class="person-card">
 
+                <div class="avatar">A</div>
+
+                <small>
+                    SENIOR ESTIMATOR
+                </small>
+
+                <h3>
+                    Team Member
+                </h3>
 
                 <p>
-
-                    Tell us about your project and let VANTA AEC
-                    help turn your vision into a clear,
-                    coordinated plan.
-
+                    Supports estimating and bidding operations.
                 </p>
 
+            </div>
 
-                <a href="#contact"
-                   class="btn btn-primary">
 
-                    Discuss Your Project
+            <div class="person-card">
 
-                    <i class="fa-solid fa-arrow-right"></i>
+                <div class="avatar">E</div>
 
-                </a>
+                <small>
+                    PROJECT ENGINEER
+                </small>
+
+                <h3>
+                    Team Member
+                </h3>
+
+                <p>
+                    Supports engineering coordination and documentation.
+                </p>
+
+            </div>
+
+
+            <div class="person-card">
+
+                <div class="avatar">Q</div>
+
+                <small>
+                    QUANTITY SURVEYOR
+                </small>
+
+                <h3>
+                    Team Member
+                </h3>
+
+                <p>
+                    Handles quantities, takeoffs and cost analysis.
+                </p>
 
             </div>
 
@@ -1537,113 +852,53 @@
 </section>
 
 
+<!-- ================= CONTACT ================= -->
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="section contact"
-         id="contact">
+<section class="contact section" id="contact">
 
     <div class="container contact-grid">
 
+        <div class="contact-info">
 
-        <div class="contact-info reveal">
-
-            <div class="eyebrow">
-
-                <span></span>
-
-                Contact VANTA
-
+            <div class="section-label">
+                CONTACT VANTA AEC
             </div>
 
-
             <h2>
-
-                Start your
-                <span>next project.</span>
-
+                Let's talk about
+                <span>your project.</span>
             </h2>
 
-
             <p>
-
-                Have a project in Houston or anywhere across
-                the United States? Tell us what you're building.
-
+                Send your project details and our team can
+                discuss your estimating or construction requirements.
             </p>
 
 
-            <div class="contact-details">
+            <div class="company-details">
 
+                <div>
+                    <small>EMAIL</small>
 
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                    </div>
-
-                    <div>
-
-                        <small>
-                            LOCATION
-                        </small>
-
-                        <strong>
-                            Houston, Texas, USA
-                        </strong>
-
-                    </div>
-
+                    <a href="mailto:company@email.com">
+                        company@email.com
+                    </a>
                 </div>
 
+                <div>
+                    <small>PHONE</small>
 
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                    </div>
-
-                    <div>
-
-                        <small>
-                            EMAIL
-                        </small>
-
-                        <strong>
-                            info@vantaaec.com
-                        </strong>
-
-                    </div>
-
+                    <a href="tel:+00000000000">
+                        +00 000 0000000
+                    </a>
                 </div>
 
+                <div>
+                    <small>OFFICE</small>
 
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-
-                        <i class="fa-solid fa-phone"></i>
-
-                    </div>
-
-                    <div>
-
-                        <small>
-                            PHONE
-                        </small>
-
-                        <strong>
-                            +1 (000) 000-0000
-                        </strong>
-
-                    </div>
-
+                    <span>
+                        Your Company Address
+                    </span>
                 </div>
 
             </div>
@@ -1651,252 +906,204 @@
         </div>
 
 
+        <div class="form-box">
 
-        <form class="contact-form reveal"
-              id="contactForm">
+            <div class="form-title">
 
+                <small>PROJECT INQUIRY</small>
 
-            <div class="form-row">
-
-
-                <div class="form-group">
-
-                    <label>
-                        Name
-                    </label>
-
-                    <input type="text"
-                           placeholder="Your name"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Email
-                    </label>
-
-                    <input type="email"
-                           placeholder="you@example.com"
-                           required>
-
-                </div>
+                <h3>
+                    Tell us about your project.
+                </h3>
 
             </div>
 
+            <form id="inquiryForm">
+
+                <div class="form-row">
+
+                    <div>
+                        <label>Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            required
+                            placeholder="Your name"
+                        >
+                    </div>
+
+                    <div>
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="Your email"
+                        >
+                    </div>
+
+                </div>
 
 
-            <div class="form-row">
+                <div class="form-row">
 
+                    <div>
+                        <label>Phone</label>
 
-                <div class="form-group">
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Phone number"
+                        >
+                    </div>
 
-                    <label>
-                        Company
-                    </label>
+                    <div>
+                        <label>Service</label>
 
-                    <input type="text"
-                           placeholder="Company name">
+                        <select id="service">
+
+                            <option value="">
+                                Select service
+                            </option>
+
+                            <option>Residential Estimating</option>
+                            <option>Commercial Estimating</option>
+                            <option>Construction</option>
+                            <option>Quantity Takeoff</option>
+                            <option>Bidding</option>
+                            <option>Project Development</option>
+
+                        </select>
+
+                    </div>
 
                 </div>
 
 
-                <div class="form-group">
+                <div>
 
-                    <label>
-                        Service
-                    </label>
+                    <label>Project Details</label>
 
-                    <select>
-
-                        <option>
-                            Select a service
-                        </option>
-
-                        <option>
-                            Architectural Design
-                        </option>
-
-                        <option>
-                            Structural Engineering
-                        </option>
-
-                        <option>
-                            MEP Engineering
-                        </option>
-
-                        <option>
-                            3D Visualization
-                        </option>
-
-                        <option>
-                            Cost Estimation
-                        </option>
-
-                        <option>
-                            Project Management
-                        </option>
-
-                        <option>
-                            Permit Set
-                        </option>
-
-                        <option>
-                            Bidding Documents
-                        </option>
-
-                        <option>
-                            Drafting & CAD
-                        </option>
-
-                    </select>
+                    <textarea
+                        id="message"
+                        required
+                        placeholder="Tell us about your project..."
+                    ></textarea>
 
                 </div>
 
-            </div>
 
+                <button
+                    type="submit"
+                    class="button button-primary submit-button"
+                >
+                    Send Inquiry →
+                </button>
 
+                <p id="formMessage"></p>
 
-            <div class="form-group">
+            </form>
 
-                <label>
-                    Project Details
-                </label>
-
-                <textarea
-                    placeholder="Tell us about your project..."
-                ></textarea>
-
-            </div>
-
-
-            <button type="submit"
-                    class="btn btn-primary">
-
-                Send Inquiry
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-        </form>
+        </div>
 
     </div>
 
 </section>
 
 
+<!-- ================= CTA ================= -->
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<section class="final-cta">
 
-<footer>
+    <div class="container final-cta-inner">
+
+        <div>
+
+            <small>
+                READY TO BUILD?
+            </small>
+
+            <h2>
+                Your next project
+                starts with a better estimate.
+            </h2>
+
+        </div>
+
+        <a href="#contact" class="button button-light">
+            Request an Estimate →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
 
     <div class="container footer-grid">
 
+        <div>
 
-        <div class="footer-brand">
+            <a href="#home" class="logo">
 
-            <a href="#home"
-               class="logo">
-
-                <span class="logo-mark">
-                    V
-                </span>
+                <span class="logo-mark">V</span>
 
                 <span class="logo-text">
-                    VANTA <b>AEC</b>
+                    <strong>VANTA</strong>
+                    <small>AEC</small>
                 </span>
 
             </a>
 
-
-            <p>
-
-                Architecture, engineering and construction
-                solutions for projects that demand precision.
-
+            <p class="footer-description">
+                Construction estimating, bidding and
+                professional AEC project support.
             </p>
 
         </div>
 
 
+        <div>
 
-        <div class="footer-column">
+            <h4>Company</h4>
 
-            <h4>
-                Services
-            </h4>
-
-            <a href="#services">
-                Architecture
-            </a>
-
-            <a href="#services">
-                Structural
-            </a>
-
-            <a href="#services">
-                MEP
-            </a>
-
-            <a href="#services">
-                Visualization
-            </a>
-
-            <a href="#services">
-                Estimation
-            </a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#team">Team</a>
 
         </div>
 
 
+        <div>
 
-        <div class="footer-column">
+            <h4>Services</h4>
 
-            <h4>
-                Company
-            </h4>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#samples">
-                Samples
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
+            <a href="#services">Estimating</a>
+            <a href="#services">Bidding</a>
+            <a href="#services">Construction</a>
+            <a href="#services">Development</a>
 
         </div>
 
 
+        <div>
 
-        <div class="footer-column">
+            <h4>Contact</h4>
 
-            <h4>
-                Location
-            </h4>
-
-            <a href="#contact">
-                Houston, Texas
+            <a href="mailto:company@email.com">
+                company@email.com
             </a>
 
-            <a href="#contact">
-                United States
-            </a>
-
-            <a href="#contact">
-                info@vantaaec.com
+            <a href="tel:+00000000000">
+                +00 000 0000000
             </a>
 
         </div>
@@ -1904,31 +1111,22 @@
     </div>
 
 
+    <div class="container copyright">
 
-    <div class="footer-bottom">
+        <span>
+            © <span id="year"></span> VANTA AEC
+        </span>
 
-        <div class="container footer-bottom-inner">
-
-            <span>
-                © 2026 VANTA AEC. All rights reserved.
-            </span>
-
-            <span>
-                Houston · Texas · USA
-            </span>
-
-        </div>
+        <span>
+            All rights reserved.
+        </span>
 
     </div>
 
 </footer>
 
 
-
-<!-- JAVASCRIPT -->
-
 <script src="script.js"></script>
 
 </body>
-
 </html>

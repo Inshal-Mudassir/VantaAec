@@ -1,135 +1,245 @@
-/* =========================================================
+/* ===============================
    VANTA AEC
-   MAIN JAVASCRIPT
-========================================================= */
+================================ */
 
 
-/* =========================================================
-   PAGE LOADER
-========================================================= */
+/* MOBILE MENU */
 
-window.addEventListener("load", function () {
+const menuButton = document.getElementById("menuButton");
+const nav = document.getElementById("nav");
 
-    const loader =
-        document.getElementById("loader");
+if (menuButton) {
 
-    setTimeout(function () {
+    menuButton.addEventListener("click", () => {
 
-        loader.classList.add("hide");
+        nav.classList.toggle("mobile-open");
 
-    }, 700);
+    });
 
-});
+}
 
 
+/* CLOSE MOBILE MENU */
 
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
+document.querySelectorAll(".nav-link").forEach(link => {
 
-const menuBtn =
-    document.getElementById("menuBtn");
+    link.addEventListener("click", () => {
 
-const navLinks =
-    document.getElementById("navLinks");
-
-
-menuBtn.addEventListener("click", function () {
-
-    navLinks.classList.toggle("open");
-
-
-    const icon =
-        menuBtn.querySelector("i");
-
-
-    if (navLinks.classList.contains("open")) {
-
-        icon.classList.remove("fa-bars");
-
-        icon.classList.add("fa-xmark");
-
-    } else {
-
-        icon.classList.remove("fa-xmark");
-
-        icon.classList.add("fa-bars");
-
-    }
-
-});
-
-
-
-/* =========================================================
-   CLOSE MOBILE MENU
-========================================================= */
-
-const navigationItems =
-    document.querySelectorAll(".nav-links a");
-
-
-navigationItems.forEach(function (item) {
-
-    item.addEventListener("click", function () {
-
-        navLinks.classList.remove("open");
-
-
-        const icon =
-            menuBtn.querySelector("i");
-
-
-        icon.classList.remove("fa-xmark");
-
-        icon.classList.add("fa-bars");
+        nav.classList.remove("mobile-open");
 
     });
 
 });
 
 
+/* HEADER SHADOW */
 
-/* =========================================================
-   HEADER SCROLL EFFECT
-========================================================= */
+const header = document.getElementById("header");
 
-const header =
-    document.getElementById("header");
+window.addEventListener("scroll", () => {
 
+    if (window.scrollY > 30) {
 
-window.addEventListener("scroll", function () {
-
-    if (window.scrollY > 50) {
-
-        header.classList.add("scrolled");
+        header.style.boxShadow =
+            "0 8px 30px rgba(16,32,43,.08)";
 
     } else {
 
-        header.classList.remove("scrolled");
+        header.style.boxShadow = "none";
 
     }
 
 });
 
 
+/* ACTIVE NAVIGATION */
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+const sections =
+    document.querySelectorAll("section[id]");
 
-const revealObserver =
+const navLinks =
+    document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const top =
+            section.offsetTop - 160;
+
+        if (window.scrollY >= top) {
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href")
+            === "#" + current
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* CONTACT FORM */
+
+const inquiryForm =
+    document.getElementById("inquiryForm");
+
+const formMessage =
+    document.getElementById("formMessage");
+
+
+if (inquiryForm) {
+
+    inquiryForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name")
+                .value.trim();
+
+            const email =
+                document.getElementById("email")
+                .value.trim();
+
+            const phone =
+                document.getElementById("phone")
+                .value.trim();
+
+            const service =
+                document.getElementById("service")
+                .value.trim();
+
+            const message =
+                document.getElementById("message")
+                .value.trim();
+
+
+            if (!name || !email || !message) {
+
+                formMessage.textContent =
+                    "Please complete the required fields.";
+
+                formMessage.style.color =
+                    "#b44d4d";
+
+                return;
+
+            }
+
+
+            /*
+                CHANGE THIS TO YOUR REAL
+                COMPANY EMAIL.
+            */
+
+            const companyEmail =
+                "company@email.com";
+
+
+            const subject =
+                encodeURIComponent(
+                    "New VANTA AEC Project Inquiry"
+                );
+
+
+            const body =
+                encodeURIComponent(
+`
+NEW PROJECT INQUIRY
+
+Name:
+${name}
+
+Email:
+${email}
+
+Phone:
+${phone || "Not provided"}
+
+Service:
+${service || "Not selected"}
+
+Project Details:
+${message}
+`
+                );
+
+
+            window.location.href =
+                `mailto:${companyEmail}?subject=${subject}&body=${body}`;
+
+
+            formMessage.textContent =
+                "Opening your email application...";
+
+            formMessage.style.color =
+                "#4f8c60";
+
+
+            inquiryForm.reset();
+
+        }
+    );
+
+}
+
+
+/* FOOTER YEAR */
+
+const year =
+    document.getElementById("year");
+
+if (year) {
+
+    year.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* SCROLL REVEAL */
+
+const revealItems =
+    document.querySelectorAll(
+        ".service-card, .sample-card, .stat, .person-card, .ceo-card"
+    );
+
+
+const observer =
     new IntersectionObserver(
+        entries => {
 
-        function (entries) {
-
-            entries.forEach(function (entry) {
+            entries.forEach(entry => {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+                    entry.target.style.opacity = "1";
 
-                    revealObserver.unobserve(
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    observer.unobserve(
                         entry.target
                     );
 
@@ -138,296 +248,22 @@ const revealObserver =
             });
 
         },
-
         {
-            threshold: 0.12
+            threshold: .08
         }
-
     );
 
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(function (element) {
+revealItems.forEach(item => {
 
-        revealObserver.observe(element);
+    item.style.opacity = "0";
 
-    });
+    item.style.transform =
+        "translateY(20px)";
 
+    item.style.transition =
+        "opacity .6s ease, transform .6s ease";
 
-
-/* =========================================================
-   PDF SAMPLE FILTER
-========================================================= */
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-const sampleCards =
-    document.querySelectorAll(".sample-card");
-
-
-filterButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-
-        /* Remove active state */
-
-        filterButtons.forEach(function (btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-        /* Activate selected button */
-
-        button.classList.add("active");
-
-
-        const selectedCategory =
-            button.getAttribute("data-filter");
-
-
-        sampleCards.forEach(function (card) {
-
-            const category =
-                card.getAttribute("data-category");
-
-
-            if (
-                selectedCategory === "all" ||
-                selectedCategory === category
-            ) {
-
-                card.style.display =
-                    "block";
-
-                setTimeout(function () {
-
-                    card.style.opacity =
-                        "1";
-
-                    card.style.transform =
-                        "translateY(0)";
-
-                }, 20);
-
-            } else {
-
-                card.style.opacity =
-                    "0";
-
-                card.style.transform =
-                    "translateY(15px)";
-
-
-                setTimeout(function () {
-
-                    card.style.display =
-                        "none";
-
-                }, 250);
-
-            }
-
-        });
-
-    });
-
-});
-
-
-
-/* =========================================================
-   CONTACT FORM
-========================================================= */
-
-const contactForm =
-    document.getElementById("contactForm");
-
-
-contactForm.addEventListener(
-    "submit",
-    function (event) {
-
-        event.preventDefault();
-
-
-        const name =
-            contactForm.querySelector(
-                'input[type="text"]'
-            ).value;
-
-
-        if (name.trim() === "") {
-
-            alert(
-                "Please enter your name."
-            );
-
-            return;
-
-        }
-
-
-        alert(
-            "Thank you! Your project inquiry has been received."
-        );
-
-
-        contactForm.reset();
-
-    }
-);
-
-
-
-/* =========================================================
-   IMAGE LOAD EFFECT
-========================================================= */
-
-const images =
-    document.querySelectorAll("img");
-
-
-images.forEach(function (image) {
-
-    if (image.complete) {
-
-        image.classList.add("loaded");
-
-    } else {
-
-        image.addEventListener(
-            "load",
-            function () {
-
-                image.classList.add("loaded");
-
-            }
-        );
-
-    }
-
-});
-
-
-
-/* =========================================================
-   PARALLAX HERO EFFECT
-========================================================= */
-
-const heroImage =
-    document.querySelector(".hero-image img");
-
-
-window.addEventListener("scroll", function () {
-
-    if (!heroImage) {
-        return;
-    }
-
-
-    const scrollPosition =
-        window.scrollY;
-
-
-    if (scrollPosition < window.innerHeight) {
-
-        heroImage.style.transform =
-            `scale(1.03) translateY(${scrollPosition * 0.08}px)`;
-
-    }
-
-});
-
-
-
-/* =========================================================
-   PROJECT IMAGE HOVER
-========================================================= */
-
-const projectCards =
-    document.querySelectorAll(".project-card");
-
-
-projectCards.forEach(function (card) {
-
-    card.addEventListener("mouseenter", function () {
-
-        card.classList.add("hovered");
-
-    });
-
-
-    card.addEventListener("mouseleave", function () {
-
-        card.classList.remove("hovered");
-
-    });
-
-});
-
-
-
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-const navItems =
-    document.querySelectorAll(".nav-links a");
-
-
-window.addEventListener("scroll", function () {
-
-    let currentSection = "";
-
-
-    sections.forEach(function (section) {
-
-        const sectionTop =
-            section.offsetTop - 150;
-
-        const sectionHeight =
-            section.offsetHeight;
-
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY <
-            sectionTop + sectionHeight
-        ) {
-
-            currentSection =
-                section.getAttribute("id");
-
-        }
-
-    });
-
-
-    navItems.forEach(function (item) {
-
-        item.classList.remove("active");
-
-
-        const target =
-            item.getAttribute("href");
-
-
-        if (
-            target === "#" + currentSection
-        ) {
-
-            item.classList.add("active");
-
-        }
-
-    });
+    observer.observe(item);
 
 });
