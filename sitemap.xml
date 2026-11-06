@@ -3,9 +3,28 @@
 
     <url>
         <loc>https://vanta-aec.com/</loc>
-        <lastmod>2026-09-04</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
     </url>
+
+    <url>
+        <loc>https://vanta-aec.com/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://vanta-aec.com/services.html</loc>
+    </url>
+
+    <url>
+        <loc>https://vanta-aec.com/contact.html</loc>
+    </url>
+
+     <url>
+        <loc>https://vanta-aec.com/estimation.html</loc>
+    </url>
+
+     <url>
+        <loc>https://vanta-aec.com/projects.html</loc>
+    </url>
+
+
 
 </urlset>
